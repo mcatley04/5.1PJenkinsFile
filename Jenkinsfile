@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DIRECTORY_PATH = 'path/to/your/code'
-        TESTING_ENVIRONMENT = 'staging'
-        PRODUCTION_ENVIRONMENT = 'Michael'
+        DIRECTORY_PATH = "path/to/your/code"
+        TESTING_ENVIRONMENT = "staging"
+        PRODUCTION_ENVIRONMENT = "Michael"
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'deploy the application to a testing environment specified by the environment variable: ${env.TESTING_ENVIRONMENT}'
+                echo 'deploy the application to a testing environment specified by the environment variable: ${TESTING_ENVIRONMENT}'
             }
         }
         stage('Approval') {
