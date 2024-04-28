@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Fetch the source code from the directory path: ${DIRECTORY_PATH}'
+                echo 'Fetch the source code from the directory path: ${env.DIRECTORY_PATH}'
                 echo 'Compile the code and generate any necessary artifacts.'
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'deploy the application to a testing environment specified by the environment variable: ${TESTING_ENVIRONMENT}'
+                echo 'deploy the application to a testing environment specified by the environment variable: ${env.TESTING_ENVIRONMENT}'
             }
         }
         stage('Approval') {
@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Deploy to Production') {
             steps {
-                echo 'Deploy the application to a production environment specified by the environment variable ${PRODUCTION_ENVIRONMENT}'
+                echo 'Deploy the application to a production environment specified by the environment variable ${env.PRODUCTION_ENVIRONMENT}'
             }
         }
     }
